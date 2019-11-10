@@ -1,17 +1,17 @@
-rede_ia/__pycache__/
-rede_ia/*.pyc
-rede_ia/*.c
-rede_ia/*.so
-rede_ia/.pytest_cache
-rede_ia/.cache
+ia_processor/retinanet/__pycache__/
+ia_processor/retinanet/*.pyc
+ia_processor/retinanet/*.c
+ia_processor/retinanet/*.so
+ia_processor/retinanet/.pytest_cache
+ia_processor/retinanet/.cache
 
 # Images
-rede_ia/dataset/images/*.jpg
-rede_ia/dataset/images/*.jpg
-rede_ia/output/*.jpg
-rede_ia/output/*.png
+ia_processor/retinanet/dataset/images/*.jpg
+ia_processor/retinanet/dataset/images/*.jpg
+ia_processor/retinanet/output/*.jpg
+ia_processor/retinanet/output/*.png
 
 # Models
-rede_ia/models/*.h5
+ia_processor/retinanet/models/*.h5
 
 venv
