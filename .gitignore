@@ -14,4 +14,12 @@ ia_processor/retinanet/output/*.png
 # Models
 ia_processor/retinanet/models/*.h5
 
+ia_processor/retinanet/build
+ia_processor/retinanet/.eggs
+ia_processor/retinanet/dataset
+ia_processor/retinanet/models
+
 venv
+
+.idea
+.vscode
