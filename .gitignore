@@ -1,0 +1,17 @@
+rede_ia/__pycache__/
+rede_ia/*.pyc
+rede_ia/*.c
+rede_ia/*.so
+rede_ia/.pytest_cache
+rede_ia/.cache
+
+# Images
+rede_ia/dataset/images/*.jpg
+rede_ia/dataset/images/*.jpg
+rede_ia/output/*.jpg
+rede_ia/output/*.png
+
+# Models
+rede_ia/models/*.h5
+
+venv
