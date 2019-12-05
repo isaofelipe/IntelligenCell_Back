@@ -34,7 +34,7 @@ labels_to_names = {0: 'RBC', 1: 'Platelets', 2: 'WBC'}
 class Analyzer:
     def __init__(self, image_path):
         self.image = read_image_bgr(image_path)
-        self.model_path = os.path.join('retinanet/models/inference', 'cells.h5')
+        self.model_path = os.path.join('ia_processor/retinanet/models/inference', 'cells.h5')
         self.model = models.load_model(self.model_path, backbone_name='resnet50')
 
     def find_objects(self):

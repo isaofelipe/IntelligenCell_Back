@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import os
+os.chdir('..')
 
 import pika
 import time
@@ -8,6 +9,10 @@ import jsonpickle
 from ia_processor.retinanet.analyzer import Analyzer
 from ia_processor.webserver import app
 from cv2 import imwrite
+from PIL import Image
+from io import StringIO
+from django.core.files.base import ContentFile
+from django.core.files import File
 
 connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
 channel = connection.channel()
@@ -30,7 +35,23 @@ def callback(ch, method, properties, body):
 
     # save the image
     imwrite(image_processed_path, analyzer['draw'])
+    # imagem_processada = Image.open(image_processed_path)
+    # img_io = StringIO()
+    # imagem_processada.save(img_io, format='PNG', quality=100)
+    # img_content = ContentFile(img_io.getvalue(), 'teste.png')
 
+    imagem_processada = File(open(image_processed_path, 'rb'))
+
+    # resposta
+    response = {
+        "message": "Imagem processada",
+        "data": {"img_content": imagem_processada}
+    }
+    response_codificada = jsonpickle.encode(response)
+    ch.basic_publish(exchange='',
+                     routing_key=properties.reply_to,
+                     properties=pika.BasicProperties(correlation_id=properties.correlation_id),
+                     body=response_codificada)
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
     time.sleep(randrange(0, 5))

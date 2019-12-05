@@ -122,6 +122,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_URL = '/imagens_analise/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'imagens_analise/')
+
 # we whitelist localhost:3000 because that's where frontend will be served
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
