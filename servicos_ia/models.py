@@ -9,9 +9,15 @@ class Teste(models.Model):
         return self.nome
 
 class Analise(models.Model):
+    id = models.AutoField(primary_key=True)
     modelo = models.CharField(max_length=10)
-    imagem = models.ImageField(upload_to = 'imagens_analise/')
-    resultado = models.CharField(max_length=3, blank=True)
+    imagem = models.ImageField(upload_to='')
+    imagem_analisada = models.ImageField(upload_to='', blank=True, null=True)
+    analisada = models.BooleanField(default=False)
 
     def _str_(self):
-        return self.modelo + '_' + self.resultado
+        return self.modelo + '_analisada: ' + self.analisada
+
+class Objeto_analise(models.Model):
+    analise = models.ForeignKey(Analise, on_delete=models.CASCADE)
+    label = models.CharField(max_length=20)

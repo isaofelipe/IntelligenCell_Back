@@ -1,0 +1,25 @@
+ia_processor/retinanet/__pycache__/
+ia_processor/retinanet/*.pyc
+ia_processor/retinanet/*.c
+ia_processor/retinanet/*.so
+ia_processor/retinanet/.pytest_cache
+ia_processor/retinanet/.cache
+
+# Images
+ia_processor/retinanet/dataset/images/*.jpg
+ia_processor/retinanet/dataset/images/*.jpg
+ia_processor/retinanet/output/*.jpg
+ia_processor/retinanet/output/*.png
+
+# Models
+ia_processor/retinanet/models/*.h5
+
+ia_processor/retinanet/build
+ia_processor/retinanet/.eggs
+ia_processor/retinanet/dataset
+ia_processor/retinanet/models
+
+venv
+
+.idea
+.vscode

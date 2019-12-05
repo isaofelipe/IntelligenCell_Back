@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  rabbit_service:
+    image: "rabbitmq:3-management"
+    ports:
+      - "8088:15672"
+      - "5672:5672"
+    volumes:
+      - /var/opt/rabbit_data:/var/lib/rabbitmq
+    healthcheck:
+      test: [ "CMD", "nc", "-z", "localhost", "5672" ]
+      timeout: 5s
+      retries: 5

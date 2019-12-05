@@ -10,4 +10,4 @@ class TesteSerializer(serializers.ModelSerializer):
 class AnaliseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Analise
-        fields = ('modelo', 'imagem', 'resultado')
+        fields = ('id', 'modelo', 'imagem', 'imagem_analisada', 'analisada')

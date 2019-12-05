@@ -1,6 +1,46 @@
+# c
+configparser
+cython
+
+# d
 Django==2.2.5
 django-cors-headers==3.1.0
 djangorestframework==3.10.3
+
+# f
+flask
+flask_socketio
+
+# j
+jsonpickle
+
+# k
+keras
+keras-resnet==0.1.0
+
+# m
+matplotlib
+
+# n
+numpy
+
+# o
+opencv-python
+overlap
+
+
+# p
 Pillow==6.2.1
 pytz==2019.2
+progressbar
+pika
+
+# s
 sqlparse==0.3.0
+uWSGI==2.0.17.1
+
+# t
+tensorflow-gpu
+
+# w
+werkzeug

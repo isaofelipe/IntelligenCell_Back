@@ -1,0 +1,26 @@
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Example</title>
+  </head>
+  <body>
+    <form action = "http://localhost:5000/processor/upload" method = "POST"
+        enctype = "multipart/form-data">
+        <input type = "file" name = "image" />
+        <input type = "submit"/>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+    <script type="text/javascript">
+      var socket = io.connect('http://' + document.domain + ':' + location.port);
+      socket.on('connect', function(message) {
+        socket.emit('ia_processor_connect');
+      })
+
+      socket.on('ia_processor_analysis_completed', function(message) {
+        console.log("Image processed", message)
+      })
+    </script>
+  </body>
+  </html>
